@@ -1,0 +1,184 @@
+header, main, footer {
+    padding-left: 0px !important;
+  }
+  .div-iframe{
+    margin: auto;
+    padding: 10px;
+  }
+  #pdfframe{
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+  }
+.form {
+    box-shadow: 4px 4px 20px #23406A;
+    margin: auto;
+    background: rgb(255, 255, 253);
+    width: 360px;
+    margin-top: 2%;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+.form select {
+    background: #abc6d4;
+    width: 300px;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 9px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.form input {
+    border: 0;
+    margin: 0 0 12px;
+    padding: 9px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 4px;
+    background: #abc6d4;
+}
+.cajatexto {
+    width: 300px;
+}
+.form .buscar {
+    text-transform: uppercase;
+    background: #263238;
+    width: 303px;
+    padding: 12px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+.form .buscar:hover, .form .buscar:active, .form .buscar:focus {
+    background: #263238;
+}
+button.Zebra_DatePicker_Icon_Inside_Right {
+    margin: 0 3px 0 0;
+}
+button.Zebra_DatePicker_Icon {
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url(../images/calendar.png) no-repeat left top;
+    text-indent: -9000px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 0;
+    vertical-align: top;
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+}
+.md-align-center {
+    justify-content: center;
+}
+.md-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.datepicker-fecha{
+    background-color: white;
+}
+.md-datepicker{
+    padding: 9px;
+    box-sizing: border-box;
+
+    border-radius: 4px;
+    background: #abc6d4;
+}
+
+.md-icon-image svg {
+    height: 86% !important;
+
+}
+.md-field.md-focused .md-input, .md-field.md-focused .md-textarea, .md-field.md-has-value .md-input, .md-field.md-has-value .md-textarea {
+    font-size: 14px !important;
+}
+
+.md-input{
+    margin:0px !important;
+}
+.md-field {
+    width: 94% !important;
+    margin: 2px 8px 13px !important;
+}
+.md-datepicker-dialog{
+    background-color: white;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 7px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey !important;
+    border-radius: 10px !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #483535 !important;
+    border-radius: 10px !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ada5a5 !important;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.lesly {
+    background-color: #4CAF50 !important;
+}
+
+.datepicker-date-display {
+    background-color: #039be5 !important;
+}
+.datepicker-table td.is-selected {
+    background-color: #039be5 !important;
+}
+.botones-pdf{
+    display: inline;
+}
+
+.botones-pdf .buscar{
+    width: 145px;
+}

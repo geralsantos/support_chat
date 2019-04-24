@@ -1,0 +1,8 @@
+[18-Feb-2019 14:04:22 America/Lima] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1130] Host 's148-72-23-133' is not allowed to connect to this MySQL server in /home/admin/public_html/app/core/mysql.class.php:8
+Stack trace:
+#0 /home/admin/public_html/app/core/mysql.class.php(8): PDO->__construct('mysql:dbname=ad...', 'admin_portallig...', 'pulpomasters')
+#1 /home/admin/public_html/app/modulo/acceso/controlador.acceso.php(12): MySQL->__construct()
+#2 /home/admin/public_html/app/core.php(60): acceso->index()
+#3 /home/admin/public_html/index.php(4): require_once('/home/admin/pub...')
+#4 {main}
+  thrown in /home/admin/public_html/app/core/mysql.class.php on line 8

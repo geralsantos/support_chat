@@ -1,2 +1,2 @@
-# support_chat
-Demo para probar chat tipo zendesk que se usa para interactucar con los que visiten a la pagina web
+# proyecto_template
+Este repo es para tener còmo un punto de partida si se quiere iniciar un nuevo proyecto
