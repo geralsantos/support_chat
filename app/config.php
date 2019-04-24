@@ -21,7 +21,7 @@ define( "DIR_CARGAS", APP . DS . "cargas" . DS ."equipos_avatar" . DS  );
  
 //UBICACIONES PUBLICAS
 //define( "BASE", "/" );  
-define( "BASE", "/proyecto_template/" );
+define( "BASE", "/support_chat/" );
 
 define( "IMG", BASE . 'img' );
 define( "JS", BASE . 'js' );
