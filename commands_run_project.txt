@@ -3,6 +3,3 @@ instalar composer si no lo tienes
 https://getcomposer.org/download/
 --ejecutar en la consola
 composer install
-composer require facebook/graph-sdk
-npm install
-npm init

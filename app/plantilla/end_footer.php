@@ -1,6 +1,7 @@
   <script type="text/javascript">  <?php $this->getReady(); ?></script>
   <script type="text/javascript" src="<?php echo JS ?>/utils.js"></script>
   <script type="text/javascript" src="<?php echo JS ?>/variable_entorno.js"></script>
+  <script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
 
   <script src="<?php echo JS ?>/vue/vue.min.js"></script>
   <script src="<?php echo JS ?>/vue/axios.min.js"></script>
@@ -22,12 +23,7 @@
 <footer>
 <div class="footer-text"> <p>Copyright</p>
   </div>
-</footer>
-<template id="bar">
-              <div>
-                Barxd {{test}}
-              </div>
-            </template>
+</footer> 
 </body>
 
 </html>

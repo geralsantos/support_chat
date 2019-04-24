@@ -13,17 +13,7 @@
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    
-    <!-- main CSS
-		============================================ -->
-    <link rel="stylesheet" href="<?php echo ASSETS ?>/css/main.css">
-  
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="<?php echo ASSETS ?>/style.css">
-  
-    <link rel="stylesheet" href="<?php echo ASSETS ?>/css/estilos.css">
-
+    <?php $this->getReferencia()?>
     <script src="https://checkout.culqi.com/js/v3"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
   	<link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
@@ -36,7 +26,7 @@
     <v-toolbar color="white" grey>
           <v-toolbar-side-icon @click.stop="mini = !mini" style="margin-left:66px !important;"></v-toolbar-side-icon>
 
-          <v-toolbar-title>Nombre del Colegio</v-toolbar-title>
+          <v-toolbar-title>DEMO</v-toolbar-title>
 
           <v-spacer></v-spacer>
 

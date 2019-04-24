@@ -1,165 +1,162 @@
 var portada_index = {
     template: '#portada-index',
     data:()=>({
-      equipos:[],
-      equipo:[],
-      jugadores:[],
-      plantilla:[],
-      datos_liga:[],
-      mensaje:null,
-      mostrar:false,
-      imagen:false,
-      usuario_activo:null,
+      chat_input:'',
+      //chat_input2:'',
+      session_id: Math.floor(Math.random()*100),
+      websocket_server:new WebSocket("ws://localhost:8000/"),
     }),
     created:function(){
+      
     },
     mounted:function(){
-     // this.cargar_datos_usuario();
+        console.log()
+        this.initWebSocket();
 
+        this.hideChat(0);
+        //Toggle chat and links 
     },
     methods:{
-        cargar_datos_usuario(){
-            this.$http.post('cargar_datos_usuario?view',{}).then(function(response){
-                if( response.body.resultado ){
-                    this.datos_liga = response.body.data;
-
-
-                    console.log(response.body.usuario)
-                    this.jugadores = JSON.parse(this.datos_liga.jugadores);
-                    this.ver_platilla();
-                    this.imagen = false;
-                    this.mostrar= true;
-                }else{
-                    this.cargar_usuario();
-
-
-                }
+        chat_fullscreen_loader(){
+            document.querySelectorAll('.fullscreen').forEach(element => {
+                element.classList.toggle('zmdi-window-maximize');
             });
-
-        },
-        cargar_usuario(){
-            this.$http.post('cargar_usuario?view',{}).then(function(response){
-                if( response.body.resultado ){
-                   if(response.body.data.activo==0){
-                    this.usuario_activo =0;
-
-                    this.mensaje = "No perteneces a ninguna Liga. Crea o únete a una liga para empezar!"
-                   }else{
-                    this.usuario_activo =1;
-                    this.imagen = true;
-                    this.mensaje = "No perteneces a ninguna Liga. Crea o únete a una liga para empezar!"
-                   }
-                }
+            document.querySelectorAll('.fullscreen').forEach(element => {
+                element.classList.toggle('zmdi-window-restore');
+            });
+            document.querySelectorAll('.chat').forEach(element => {
+                element.classList.toggle('chat_fullscreen');
+            });
+            document.querySelectorAll('.fab').forEach(element => {
+                element.classList.toggle('is-hide');
+            });
+            document.querySelectorAll('.header_img').forEach(element => {
+                element.classList.toggle('change_img');
+            });
+            document.querySelectorAll('.img_container').forEach(element => {
+                element.classList.toggle('change_img');
+            });
+            document.querySelectorAll('.chat_header').forEach(element => {
+                element.classList.toggle('chat_header2');
+            });
+            document.querySelectorAll('.fab_field').forEach(element => {
+                element.classList.toggle('fab_field2');
+            });
+            document.querySelectorAll('.chat_converse').forEach(element => {
+                element.classList.toggle('chat_converse2');
             });
         },
-        ver_platilla(){
-            this.$http.post('cargar_plantilla_2?view',{jugadores:this.jugadores}).then(function(response){
-                if( response.body.resultado ){
-                   this.plantilla = response.body.plantilla;
-                }
-            });
-        },
-      cargar_equipos(){
-        this.$http.post('cargar_equipos_historial?view',{}).then(function(response){
-            if( response.body.resultado ){
-                this.equipos= response.body.equipos;
-                for(var i= 0; i <  this.equipos.length; i++) {
-                    let jugadores = JSON.parse(this.equipos[i].jugadores);
-                    let num =(jugadores.length != undefined)?jugadores.length:0;
-                    this.equipos[i].jugadores_num =num;
-                }
-                console.log(this.equipos[0]["jugadores"])
-                this.equipo=this.equipos[0];
-                this.jugadores = JSON.parse(this.equipos[0]["jugadores"]);
-                this.cargar_plantilla();
-            }else{
-           // swal("Error", "Un error ha ocurrido", "danger");
+        hideChat(hide) {
+            switch (hide) {
+              case 0:
+                    document.querySelector('#chat_converse').style.display='none';
+                    document.querySelector('#chat_body').style.display='none';
+                    document.querySelector('#chat_form').style.display= 'none';
+                    document.querySelector('.chat_login').style.display='block';
+                    document.querySelector('.chat_fullscreen_loader').style.display='none';
+                    document.querySelector('#chat_fullscreen').style.display= 'none';
+                    break;
+              case 1:
+                    document.querySelector('#chat_converse').style.display='block';
+                    document.querySelector('#chat_body').style.display='none';
+                    document.querySelector('#chat_form').style.display='none';
+                    document.querySelector('.chat_login').style.display='none';
+                    document.querySelector('.chat_fullscreen_loader').style.display='block';
+                    break;
+              case 2:
+                    document.querySelector('#chat_converse').style.display='none';
+                    document.querySelector('#chat_body').style.display='block';
+                    document.querySelector('#chat_form').style.display='none';
+                    document.querySelector('.chat_login').style.display='none';
+                    document.querySelector('.chat_fullscreen_loader').style.display='block';
+                    break;
+              case 3:
+                    document.querySelector('#chat_converse').style.display='none';
+                    document.querySelector('#chat_body').style.display='none';
+                    document.querySelector('#chat_form').style.display='block';
+                    document.querySelector('.chat_login').style.display='none';
+                    document.querySelector('.chat_fullscreen_loader').style.display='block';
+                    break;
+              case 4:
+                    document.querySelector('#chat_converse').style.display='none';
+                    document.querySelector('#chat_body').style.display='none';
+                    document.querySelector('#chat_form').style.display='none';
+                    document.querySelector('.chat_login').style.display='none';
+                    document.querySelector('.chat_fullscreen_loader').style.display='block';
+                    document.querySelector('#chat_fullscreen').style.display='block';
+                    break;
             }
-        });
+        },
+        toggleFab() {
+            document.querySelectorAll('.prime').forEach(element => {
+                element.classList.toggle('zmdi-comment-outline')
+            });
+            document.querySelectorAll('.prime').forEach(element => {
+                element.classList.toggle('zmdi-close')
+            });
+            document.querySelectorAll('.prime').forEach(element => {
+                element.classList.toggle('is-active')
+            });
+            document.querySelectorAll('.prime').forEach(element => {
+                element.classList.toggle('is-visible');
+            });
+            document.querySelectorAll('#prime').forEach(element => {
+                element.classList.toggle('is-float');
+            });
+            document.querySelectorAll('.chat').forEach(element => {
+                element.classList.toggle('is-visible');
+            });
+            document.querySelectorAll('.fab').forEach(element => {
+                element.classList.toggle('is-visible')
+            }); 
+        },
+      enter(){
+        var chat_msg = this.chat_input;
+        this.websocket_server.send(
+            JSON.stringify({
+                'type':'chat',
+                'user_id':this.session_id,
+                'chat_msg':chat_msg
+            })
+        );
+        this.chat_input='';
     },
-
-        ver_equipo(e){
-
-            this.jugadores = JSON.parse(this.equipo.jugadores);
-            this.cargar_plantilla();
-            let data = [
-                ['Ganados',10],
-                ['Perdidos', 3],
-                ['Empates', 3],
-
-            ]
-            this.ver_grafico(data)
-
-        },
-        cargar_plantilla(){
-
-            this.$http.post('cargar_plantilla?view',{jugadores:this.jugadores}).then(function(response){
-                if( response.body.resultado ){
-
-                    console.log( response.body.plantilla);
-                    this.plantilla = response.body.plantilla;
-
-                }else{
-             //   swal("Error", "Un error ha ocurrido", "danger");
-                }
-            });
-        },
-        ver_grafico(){
-            Highcharts.chart('grafico-portada', {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: 0,
-                    plotShadow: false
-                },
-                title: {
-                    text: 'Estadísticas',
-                    align: 'center',
-                    verticalAlign: 'middle',
-                    y: 40
-                },
-                subtitle:{
-                  text: this.equipo.nombre,
-                  align: 'center',
-                    verticalAlign: 'middle',
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.y} partidos</b>'
-                },
-                credits:{
-                  enabled:false
-                },
-                plotOptions: {
-                    pie: {
-                        dataLabels: {
-                            enabled: true,
-                            distance: -50,
-                            style: {
-                                fontWeight: 'bold',
-                                color: 'white'
-                            }
-                        },
-                        startAngle: -90,
-                        endAngle: 90,
-                        center: ['50%', '75%'],
-                        size: '110%'
-                    }
-                },
-                series: [{
-                    type: 'pie',
-                    name: 'Partidos',
-                    innerSize: '50%',
-                    data: [
-                        ['Ganados',10],
-                        ['Perdidos', 3],
-                        ['Empates', 3],
-
-                    ]
-                }]
-            });
-        },
-        openCulqi(){
-            appVue.culqi='&renovar_plan_culqi'; //url
-            appVue.openCulqi();
+    /*enter2(){
+        var chat_msg = this.chat_input2;
+        this.websocket_server.send(
+            JSON.stringify({
+                'type':'chat2',
+                'user_id':this.session_id,
+                'chat_msg':chat_msg
+            })
+        );
+        this.chat_input2='';
+    },*/
+    initWebSocket(){
+        var self = this;
+        this.websocket_server.onopen = function(e) {
+            self.websocket_server.send(
+                JSON.stringify({
+                    'type':'socket',
+                    'user_id':this.session_id
+                })
+            );
+        };
+        this.websocket_server.onerror = function(e) {
+            // Errorhandling
         }
+        this.websocket_server.onmessage = function(e)
+        {
+            var json = JSON.parse(e.data);
+            switch(json.type) {
+                case 'chat':
+                    document.getElementById('chat_fullscreen').innerHTML += (json.msg);
+                    break;
+                /*case 'chat2':
+                    document.getElementById('chat_output2').innerHTML += (json.msg);
+                    break;*/
+            }
+        }
+    },
     }
   }

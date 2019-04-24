@@ -58,7 +58,7 @@ define ('TITULO_DEFAULT','PORTAL DE CONSULTA');
 define ('SECRET_KEY_CULQI_PRODUCTION','sk_live_eg0pqcA03jaf8I6n');
 define ('SECRET_KEY_CULQI_TEST','sk_test_R2LieqA9BBVglUyj');
 
-define ('NOMBRE_PAGINA','Proyecto Template');
+define ('NOMBRE_PAGINA','Soporte Chat');
 
 //RECURSOS GENERALES
 $CSS = array("bootstrap/bootstrap.min","bootstrap/bootstrap-theme-yeti.min","global");
