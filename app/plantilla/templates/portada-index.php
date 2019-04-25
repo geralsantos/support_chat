@@ -85,7 +85,7 @@
 
       </div></span>   
   </div>
-    <div id="chat_fullscreen" class="chat_conversion chat_converse">
+    <div id="chat_fullscreen" class="chat_conversion chat_converse" >
     <span class="chat_msg_item chat_msg_item_admin">
           <div class="chat_avatar">
              <img src="http://res.cloudinary.com/dqvwa7vpe/image/upload/v1496415051/avatar_ma6vug.jpg"/>
@@ -123,18 +123,16 @@
   <div class="fab_field">
     <a id="fab_camera" class="fab"><i class="zmdi zmdi-camera"></i></a>
     <a id="fab_send" class="fab"><i class="zmdi zmdi-mail-send"></i></a>
-    <textarea id="chatSend" name="chat_message" v-model="chat_input" @keyup.enter="enter()" placeholder="Escriba su mensaje aquí" class="chat_field chat_message"></textarea>
+    <textarea id="chatSend" name="chat_message" v-model="chat_input" @keyup.enter="enter()" placeholder="Escriba su mensaje" class="chat_field chat_message"></textarea>
   </div>
 </div>
   <a id="prime" @click="toggleFab()" class="fab"><i class="prime zmdi zmdi-comment-outline"></i></a>
 </div>
     	<!--<textarea id="chat_input2" v-model="chat_input2" placeholder="Deine Nachricht2..." @keyup.enter="enter2()" ></textarea>-->
-
 	<!--<div id="chat_output2"></div>	-->
 		<textarea id="chat_input" v-model="chat_input" placeholder="Deine Nachricht..." @keyup.enter="enter()" ></textarea>
 	<div id="chat_output"></div>	
-
-		<input type="hidden" id="session_id" v-model="session_id" value="<?php echo mt_rand(1,999); ?>">
+            <input type="hidden" id="session_id" v-model="session_id" value="<?php echo mt_rand(1,999); ?>">
     </div>
 
 </template>

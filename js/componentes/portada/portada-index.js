@@ -12,8 +12,10 @@ var portada_index = {
     mounted:function(){
         console.log()
         this.initWebSocket();
-
         this.hideChat(0);
+        setTimeout(() => {
+            this.toggleFab();
+        }, 3000);
         //Toggle chat and links 
     },
     methods:{
