@@ -9,11 +9,10 @@
   <script src="<?php echo JS ?>/vue/vuetify.min.js"></script>
   <script src="<?php echo JS ?>/emojis.min.js"></script>
 
-  <?php foreach (glob(JS_ROOT . DS . 'componentes' . DS ."portada/*.js") as $filename): ?>
-    <script type="text/javascript" src="<?php echo JS . '/componentes/portada/'. basename($filename); ?>"></script>
-  <?php endforeach;?>
-  <script type="text/javascript" src="<?php echo JS ?>/vue/app_login.js"></script>
-  <script type="text/javascript" src="<?php echo JS ?>/vue/app.js"></script>
+ 
+
+  <script type="text/javascript" src="../dist/portada-index.js"></script>
+  <script type="text/javascript" src="../dist/vueapps.js"></script>
   <script type="text/javascript">
     if ("<?php echo $_SESSION["mensaje_alerta"]["tipo"] ?>"=="error") {
       swal("Error", "<?php echo $_SESSION["mensaje_alerta"]["texto"] ?>", "warning");

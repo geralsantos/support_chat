@@ -23,6 +23,7 @@
 <body>
     <div class="" id="vue_app">
     <v-app>
+    <div id="readingTime"></div>
     <v-toolbar color="white" grey>
           <v-toolbar-side-icon @click.stop="mini = !mini" style="margin-left:66px !important;"></v-toolbar-side-icon>
 

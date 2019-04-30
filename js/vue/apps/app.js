@@ -1,12 +1,15 @@
-{
-  'use strict';
+import readingTime from "reading-time"; 
+window.calcRT = ev => {
+ var stats = readingTime(ev.value).text;
+document.getElementById("readingTime").innerText = stats;
+};
   //Vue.http.options.emulateJSON=true; // http client
   Vue.use(VueRouter);
   //Vue.http.options.emulateJSON=true; // http client
   const router = new VueRouter({
     mode: 'hash',
     routes: [
-      { path: '/portada-index', component: portada_index },
+      { path: '/portada-index', component: require('../../componentes/portada/portada-index.js').default },
     ]
 });
   var appVue = new Vue({
@@ -44,5 +47,3 @@
       }
     }
   });
-
-}
