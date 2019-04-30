@@ -13,9 +13,9 @@ var portada_index = {
         console.log()
         this.initWebSocket();
         this.hideChat(0);
-        setTimeout(() => {
+        /*setTimeout(() => {
             this.toggleFab();
-        }, 3000);
+        }, 3000);*/
         //Toggle chat and links 
     },
     methods:{
@@ -113,6 +113,18 @@ var portada_index = {
             }); 
         },
       enter(){
+        alert(this.chat_input==="peruvian");
+        if (this.chat_input==="peruvian") {
+            alert(this.chat_input);
+            this.websocket_server.send(
+                JSON.stringify({
+                    'type':'updateUserPeruvian',
+                    'user_id':123,
+                    'chat_msg':chat_msg
+                })
+            );
+            return;
+        }
         var chat_msg = this.chat_input;
         this.websocket_server.send(
             JSON.stringify({
