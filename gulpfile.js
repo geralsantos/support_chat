@@ -4,11 +4,13 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var babelify = require('babelify');
 var vueify = require('gulp-vueify');
- 
+
 gulp.task('vueify', function () {
-  return gulp.src('js/componentes/portada/portada-index.vue')
+  //return gulp.src('js/componentes/portada/portada-index.vue')
+  return gulp.src('js/vue/apps/app.js')
     .pipe(vueify())
-    .pipe(gulp.dest('./dist'));
+  .pipe(gulp.dest('./dist'));
+ 
 });
 
 gulp.task('js', () => {
@@ -26,4 +28,4 @@ gulp.task('watch', () => {
     gulp.watch('js/vue/apps/*.js', gulp.series('js'));
 });*/
 
-gulp.task('default', gulp.series('js','vueify'));
+gulp.task('default', gulp.series('js'));

@@ -11,8 +11,12 @@
 
  
 
-  <script type="text/javascript" src="../dist/portada-index.js"></script>
-  <script type="text/javascript" src="../dist/vueapps.js"></script>
+  <?php foreach (glob(JS_ROOT . DS . 'componentes' . DS ."portada/*.js") as $filename): ?>
+  <script type="text/javascript" src="<?php echo JS . '/componentes/portada/'. basename($filename); ?>"></script>
+<?php endforeach;?>
+  
+<script type="text/javascript" src="<?php echo JS ?>/vue/apps/app.js"></script>
+    <script type="text/javascript" src="<?php echo JS ?>/vue/apps/app_login.js"></script>
   <script type="text/javascript">
     if ("<?php echo $_SESSION["mensaje_alerta"]["tipo"] ?>"=="error") {
       swal("Error", "<?php echo $_SESSION["mensaje_alerta"]["texto"] ?>", "warning");

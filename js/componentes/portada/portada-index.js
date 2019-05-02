@@ -1,6 +1,6 @@
 
-var portada_index = {
-    template: '#portada_index',
+var portada_index={
+    template: '#portada-index',
     data:()=>({
       chat_input:'',
       //chat_input2:'',
@@ -11,7 +11,7 @@ var portada_index = {
       
     },
     mounted:function(){
-        console.log()
+        console.log(11111111)
         this.initWebSocket();
         this.hideChat(0);
         setTimeout(() => {

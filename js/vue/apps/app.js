@@ -1,15 +1,10 @@
-import readingTime from "reading-time"; 
-window.calcRT = ev => {
- var stats = readingTime(ev.value).text;
-document.getElementById("readingTime").innerText = stats;
-};
   //Vue.http.options.emulateJSON=true; // http client
   Vue.use(VueRouter);
   //Vue.http.options.emulateJSON=true; // http client
-  const router = new VueRouter({
+  var router = new VueRouter({
     mode: 'hash',
     routes: [
-      { path: '/portada-index', component: require('../../componentes/portada/portada-index.js').default },
+      { path: '/portada-index', component: portada_index },
     ]
 });
   var appVue = new Vue({
@@ -46,4 +41,4 @@ document.getElementById("readingTime").innerText = stats;
         this.menuVisible = !this.menuVisible;
       }
     }
-  });
+  }).$mount('#vue_app');
