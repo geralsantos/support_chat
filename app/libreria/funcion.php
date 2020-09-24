@@ -66,8 +66,8 @@ function enviarCorreo($variables, $to, $subject = "Empresa.com", $body = "", $ad
     $mail->Port = 587;
     $mail->SMTPSecure = 'tls';
     $mail->SMTPAuth = true; // turn on SMTP authentication
-    $mail->Username = "integradorgofacturas@gmail.com"; // SMTP username
-    $mail->Password = 'integradorgofacturas149';
+    $mail->Username = ""; // SMTP username
+    $mail->Password = '';
     $mail->IsHTML(true);
     $de = "conta.deiconsac@gmail.com";
     $mail->From = $de;
