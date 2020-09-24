@@ -14,8 +14,8 @@ define( "ROOT", dirname(dirname(__FILE__)));
 define( "APP", ROOT . DS . 'app' );
 define( "JS_ROOT", ROOT . DS . 'js' );
 define( "PUBLICO", ROOT );
-define( "API_ID_FACEBOOK", '346694552577168' );
-define( "API_ID_SECRET_FACEBOOK", 'e71872847014142b911f5fb807d8a858' );
+define( "API_ID_FACEBOOK", '' );
+define( "API_ID_SECRET_FACEBOOK", '' );
 define( "DIR_CARGAS", APP . DS . "cargas" . DS ."equipos_avatar" . DS  );
 
  
@@ -55,8 +55,8 @@ define ('REQUIERE_ACCESO',TRUE);
 define ('URL_AMIGABLE',TRUE);
 define ('HTML',TRUE);
 define ('TITULO_DEFAULT','PORTAL DE CONSULTA');
-define ('SECRET_KEY_CULQI_PRODUCTION','sk_live_eg0pqcA03jaf8I6n');
-define ('SECRET_KEY_CULQI_TEST','sk_test_R2LieqA9BBVglUyj');
+define ('SECRET_KEY_CULQI_PRODUCTION','');
+define ('SECRET_KEY_CULQI_TEST','');
 
 define ('NOMBRE_PAGINA','Soporte Chat');
 
